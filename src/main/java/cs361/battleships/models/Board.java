@@ -187,6 +187,55 @@ public class Board {
 
 	}
 
+	public Result moveFleet(String Dir){
+
+		Result result = new Result();
+		AtackStatus temp;
+
+		if(Dir.equals("UP")){
+			for(int i = 0; i < ships.size(); i++){
+				boolean move = true;
+				for(int j = 0; j< ships.get(i).getOccupiedSquares().size();j++){
+					if(ships.get(i).getOccupiedSquares().get(j).getRow() < 2);{
+						move = false;
+					}
+				}
+				if(move){
+					for(int j=0; j<ships.get(i).getOccupiedSquares().size();j++){
+						int x = ships.get(i).getOccupiedSquares().get(j).getRow();
+						ships.get(i).getOccupiedSquares().get(j).setRow(x-1);
+					}
+				}
+			}
+		}
+
+		else if(Dir.equals("DOWN"))
+		{
+			for(int i = 0; i < ships.size(); i++){
+				boolean move = true;
+				for(int j = 0; j< ships.get(i).getOccupiedSquares().size();j++){
+					if(ships.get(i).getOccupiedSquares().get(j).getRow() > 9);{
+						move = false;
+					}
+				}
+				if(move){
+					for(int j=0; j<ships.get(i).getOccupiedSquares().size();j++){
+						int x = ships.get(i).getOccupiedSquares().get(j).getRow();
+						ships.get(i).getOccupiedSquares().get(j).setRow(x+1);
+					}
+				}
+			}
+			temp = AtackStatus.MOVEFLEET;
+			result.setResult(temp);
+		}
+
+
+
+
+
+		return result;
+	}
+
 	List<Ship> getShips() {
 		return ships;
 	}

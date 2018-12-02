@@ -28,7 +28,8 @@ public enum AtackStatus {
 	/**
 	 * The result if the coordinates given are invalid.
 	 */
-	INVALID
+	INVALID,
+
 	/**
 	 * The result if the coordinates given are Empty.
 	 */
@@ -36,5 +37,6 @@ public enum AtackStatus {
 	/**
 	 * The result if the captains quarter is hit and ship has armor
 	 */
+	MOVEFLEET
 
 }

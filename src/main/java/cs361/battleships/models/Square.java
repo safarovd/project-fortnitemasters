@@ -17,9 +17,15 @@ public class Square {
 		this.row = row;
 		this.column = column;
 	}
-
+	public void setColumn(char column){
+		this.column = column;
+	}
 	public char getColumn() {
 		return column;
+	}
+
+	public void setRow(int row){
+		this.row = row;
 	}
 
 	public int getRow() {
